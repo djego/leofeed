@@ -1,0 +1,61 @@
+<style type="text/css">
+body{
+	font: 76%/1.2em "Lucida Grande", Arial, Helvetica, sans-serif;
+	width: 100%;
+	margin-left: 50px;
+}
+h1,h2,h3{ 
+	color: #111;
+}
+a{
+	color: #473E3E;
+}
+a:hover{
+	color: #000;
+}
+a:visited{
+	color: #ccc;
+}
+
+</style>
+<div style="widht:100%; float:left">
+<h2> ALT1040 </h2>
+{% if latest_poll_list %}
+    
+    {% for poll in latest_poll_list %}
+ 		<div style="width:350px;float:left;height:350px">
+        <h3><a href="{{ poll.links.0.href }}">{{ poll.title }}</a></h3>
+        
+        {% autoescape off %}
+    	{{ poll.summary_detail.value }}
+    	{% endautoescape %}
+
+        </div>
+        
+    {% endfor %}
+    
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</div>
+<div style="widht:100%; float:left">
+<h2> {{ title_2 }} </h2>
+{% if latest_poll_list2 %}
+    
+    {% for poll in latest_poll_list2 %}
+ 		<div style="width:350px;float:left;height:350px">
+        <h3><a href="{{ poll.links.0.href }}">{{ poll.title }}</a></h3>
+        
+        {% autoescape off %}
+        	{{ poll.summary_detail.value }}
+        	{% endautoescape %}
+
+        </div>
+        
+    {% endfor %}
+    
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</div>
