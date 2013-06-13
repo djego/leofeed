@@ -1,4 +1,1 @@
-Django==1.4
-# Test runner/testing utils
-nose
 dj-database-url
